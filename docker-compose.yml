@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/ticketonapp
+    ports:
+      - 8000:8000
+    image: ticketonapp:ticketon
+    container_name: ticketon-container
+    command: python manage.py runserver 0.0.0.0:8000

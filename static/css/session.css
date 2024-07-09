@@ -1,0 +1,24 @@
+.session-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.signup-content > h2,
+.signup-content > p {
+    color: #fff;
+}
+
+.social-login button {
+    color: white;
+}
+.facebook-btn {
+    background-color: #3b5998;
+}
+.google-btn {
+    background-color: #db4437;
+}
+.x-btn {
+    background-color: #14171A;
+}

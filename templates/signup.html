@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block extra_head %}
+    <link rel="stylesheet" href="/static/session.css"/>
+{% endblock %}
+<div class="main d-flex justify-content-center align-items-center vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for message in messages %}
+            
+            {% endfor %}
+            <div class="col-md-6">
+                <div class="session-content p-4 rounded shadow">
+                    <form method="POST" class="signup-form">
+                        {% csrf_token %}
+                        <h2 class="form-title text-center mb-4">Create account</h2>
+                        <div class="form-group mb-2">
+                            <input type="text" name="username" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password2" class="form-control" placeholder="Repeat password">
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="submit" class="btn btn-primary btn-block" value="Sign Up">
+                        </div>
+                        <div class="social-login text-center mt-5">
+                            <p>Or register with:</p>
+                            <button class="btn btn-primary btn-block facebook-btn mb-2">Facebook</button>
+                            <button class="btn btn-danger btn-block google-btn mb-2">Google</button>
+                            <button class="btn btn-info btn-block x-btn mb-2">X</button>
+                        </div>
+                    </form>
+                    <p class="loginhere text-center mt-4">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
